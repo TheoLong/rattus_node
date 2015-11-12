@@ -1,4 +1,4 @@
-#!/usr/bin/pytho
+#!/usr/bin/python
 # Put the description of your file here
 # Author: theo <lzihao1@vt.edu>
 
