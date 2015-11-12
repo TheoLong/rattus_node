@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # Put the description of your file here
-# Author: Theo Long <lziaho1@vt.edu>
+# Author: Your Name <your_email@vt.edu>
 
 # Import the Default ROS tools
 import rospy
@@ -13,7 +13,6 @@ if __name__ == '__main__':
   try:
     rospy.init_node('irnode')
     global pub
-    IRsensor.header.frame_id="inertal_link"
     IRsensor = Range()
     IRsensor.radiation_type = 1
     IRsensor.field_of_view = 3.14/5.0
@@ -22,10 +21,10 @@ if __name__ == '__main__':
     IRsensor.range = None
     pub = rospy.Publisher('/range',Range, queue_size=10)
     while not rospy.is_shutdown():
-        voltage = 0.0
-        voltage = ADC.read("P9_39")
-        value = voltage * 5.0
-        distance = 59.23 * math.pow(value,-1.1597)
+        value = 0.0
+        value = ADC.read("P9_39")
+        x = value * 5.0
+        distance = 59.25287 * math.pow(x,-1.1597)
         distance = distance / 100.0
         print distance
 	IRsensor.range = distance
