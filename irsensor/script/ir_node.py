@@ -1,7 +1,6 @@
-#!/usr/bin/python/
 # Put the description of your file here
 # Author: Theo Long <lziaho1@vt.edu>
-
+#!/usr/bin/python
 # Import the Default ROS tools
 import rospy
 from sensor_msgs.msg import Range
