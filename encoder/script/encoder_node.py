@@ -35,7 +35,7 @@ if __name__ == '__main__':
 	pubRight = rospy.Publisher('/py_controller/rear_right_wheel/encoder', JointState, queue_size=10)
 	pubRight.publish(right)
 	pubLeft = rospy.Publisher('/py_controller/rear_left_wheel/encoder', JointState, queue_size=10)
-	pubr.publish(left)
+	pubLeft.publish(left)
 	rospy.spin()
 
    
