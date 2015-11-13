@@ -8,29 +8,32 @@ from sensor_msgs.msg import Range
 import Adafruit_BBIO.ADC as ADC
 import math
 ADC.setup()
-
+encoderRight = QuadratureEstimator()
+encoderLeft = QuadratureEstimator()
+left1="P8_7"
+left2="P8_8"
+right1="P8_9"
+right2="P8_10"
+GPIO.setup(left1, GPIO.IN)
+GPIO.setup(left2, GPIO.IN)
+GPIO.setup(right1, GPIO.IN)
+GPIO.setup(right2, GPIO.IN)
 if __name__ == '__main__':
   try:
-    rospy.init_node('irnode')
-    global pub
-    IRsensor.header.frame_id="inertal_link"
-    IRsensor = Range()
-    IRsensor.radiation_type = 1
-    IRsensor.field_of_view = 3.14/5.0
-    IRsensor.min_range = 0.20
-    IRsensor.max_range = 1.5
-    IRsensor.range = None
-    pub = rospy.Publisher('/range',Range, queue_size=10)
-    while not rospy.is_shutdown():
-        voltage = 0.0
-        voltage = ADC.read("P9_39")
-        value = voltage * 5.0
-        distance = 59.23 * math.pow(value,-1.1597)
-        distance = distance / 100.0
-        print distance
-	IRsensor.range = distance
-	rospy.loginfo(IRsensor)
-        pub.publish(IRsensor)
-    rospy.spin()
+  	left=JointState()
+  	right=JointState()
+  	encoderr.update(GPIO.input(left1),GPIO.input(left2),rospy.get_rostime().to_sec)
+	left.position.append(encoderr.position) 
+	left.velocity.append(encoderr.velocity)
+	encoderr.update(GPIO.input(right1),GPIO.input(right2),rospy.get_rostime().to_sec)
+	left.position.append(encoderr.position) 
+	left.velocity.append(encoderr.velocity)
+	pubRight = rospy.Publisher('/py_controller/rear_right_wheel/encoder', JointState, queue_size=10)
+	pubRight.publish(right)
+	pubLeft = rospy.Publisher('/py_controller/rear_left_wheel/encoder', JointState, queue_size=10)
+	pubr.publish(left)
+	rospy.spin()
+
+   
   except rospy.ROSInterruptException:
     pass
