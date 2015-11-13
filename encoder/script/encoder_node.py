@@ -5,6 +5,7 @@
 # Import the Default ROS tools
 import rospy
 from sensor_msgs.msg import Range
+from sensor_msgs.msg import JointState
 import Adafruit_BBIO.ADC as ADC
 import Adafruit_BBIO.GPIO as GPIO
 import math
