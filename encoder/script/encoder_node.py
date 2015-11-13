@@ -23,6 +23,7 @@ GPIO.setup("P8_9", GPIO.IN)
 GPIO.setup("P8_10", GPIO.IN)
 if __name__ == '__main__':
   try:
+  	rospy.init_node('encoder')
   	left=JointState()
   	right=JointState()
   	encoderRight.update(GPIO.input("P8_7"),GPIO.input("P8_8"),rospy.get_rostime().to_sec)
