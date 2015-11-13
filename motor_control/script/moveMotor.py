@@ -1,9 +1,5 @@
 import Adafruit_BBIO.PWM as PWM
 import Adafruit_BBIO.GPIO as GPIO
-
-
-
-
 def moveRight(velocity):
 	print("move right")
 	power=0.0
