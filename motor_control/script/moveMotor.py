@@ -10,7 +10,7 @@ def moveRight(velocity):
 	power=velocity*4
 	if power>100.0:
 		power=100.0
-	if power <-100.0
+	if power <-100.0:
 		power=-100.0
 	power=round(power,0)
 	power=int(power)
@@ -36,7 +36,7 @@ def moveLeft(velocity):
 	power=velocity*4
 	if power>100.0:
 		power=100.0
-	if power <100.0:
+	if power <-100.0:
 		power=-100.0
 	power=round(power,0)
 	power=int(power)
