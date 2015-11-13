@@ -7,7 +7,7 @@ import rospy
 from sensor_msgs.msg import Range
 import Adafruit_BBIO.ADC as ADC
 import math
-import quadrature
+from quadrature import QuadratureEstimator()
 ADC.setup()
 encoderRight = QuadratureEstimator()
 encoderLeft = QuadratureEstimator()
