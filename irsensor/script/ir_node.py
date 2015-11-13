@@ -9,8 +9,8 @@ if __name__ == '__main__':
   try:
     rospy.init_node('irnode')
     global pub
-    IR.header.frame_id="inertal_link"
     IR = Range()
+    IR.header.frame_id="inertal_link"
     IR.radiation_type = 1
     IR.field_of_view = 3.14/5.0
     IR.min_range = 0.20
