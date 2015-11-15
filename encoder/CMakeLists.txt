@@ -169,7 +169,7 @@ include_directories(
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 install(FILES
-  myfile1
+
    script/encoder_node.py 
    script/quadrature.py
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}

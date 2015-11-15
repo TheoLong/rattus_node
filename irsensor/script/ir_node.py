@@ -23,7 +23,7 @@ if __name__ == '__main__':
         value = voltage * 5.0
         distance = 59.23 * math.pow(value,-1.1597)
         distance = distance / 100.0
-        print distance
+        print( distance)
 	IR.range = distance
 	rospy.loginfo(IR)
         pub.publish(IR)
